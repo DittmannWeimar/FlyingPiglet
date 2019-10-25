@@ -7,29 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F52901462362E8670083F86A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52901452362E8670083F86A /* AppDelegate.swift */; };
-		F52901482362E8670083F86A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52901472362E8670083F86A /* SceneDelegate.swift */; };
-		F529014A2362E8670083F86A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52901492362E8670083F86A /* ViewController.swift */; };
-		F529014D2362E8670083F86A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F529014B2362E8670083F86A /* Main.storyboard */; };
-		F52901502362E8670083F86A /* FlyingPiglet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F529014E2362E8670083F86A /* FlyingPiglet.xcdatamodeld */; };
-		F52901522362E86B0083F86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F52901512362E86B0083F86A /* Assets.xcassets */; };
-		F52901552362E86B0083F86A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52901532362E86B0083F86A /* LaunchScreen.storyboard */; };
+		65B76FE02362EC7C00B3D14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B76FDF2362EC7C00B3D14A /* AppDelegate.swift */; };
+		65B76FE22362EC7C00B3D14A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65B76FE12362EC7C00B3D14A /* GameScene.sks */; };
+		65B76FE42362EC7C00B3D14A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65B76FE32362EC7C00B3D14A /* Actions.sks */; };
+		65B76FE62362EC7C00B3D14A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B76FE52362EC7C00B3D14A /* GameScene.swift */; };
+		65B76FE82362EC7C00B3D14A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B76FE72362EC7C00B3D14A /* GameViewController.swift */; };
+		65B76FEB2362EC7C00B3D14A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B76FE92362EC7C00B3D14A /* Main.storyboard */; };
+		65B76FED2362EC7E00B3D14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B76FEC2362EC7E00B3D14A /* Assets.xcassets */; };
+		65B76FF02362EC7E00B3D14A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B76FEE2362EC7E00B3D14A /* LaunchScreen.storyboard */; };
+		65B76FFB2362EC7E00B3D14A /* FlyingPigletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B76FFA2362EC7E00B3D14A /* FlyingPigletTests.swift */; };
+		65B770062362EC7E00B3D14A /* FlyingPigletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B770052362EC7E00B3D14A /* FlyingPigletUITests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		65B76FF72362EC7E00B3D14A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65B76FD42362EC7B00B3D14A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65B76FDB2362EC7C00B3D14A;
+			remoteInfo = FlyingPiglet;
+		};
+		65B770022362EC7E00B3D14A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65B76FD42362EC7B00B3D14A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65B76FDB2362EC7C00B3D14A;
+			remoteInfo = FlyingPiglet;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		F52901422362E8670083F86A /* FlyingPiglet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyingPiglet.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F52901452362E8670083F86A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F52901472362E8670083F86A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F52901492362E8670083F86A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F529014C2362E8670083F86A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F529014F2362E8670083F86A /* FlyingPiglet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlyingPiglet.xcdatamodel; sourceTree = "<group>"; };
-		F52901512362E86B0083F86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F52901542362E86B0083F86A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F52901562362E86B0083F86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65B76FDC2362EC7C00B3D14A /* FlyingPiglet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyingPiglet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65B76FDF2362EC7C00B3D14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65B76FE12362EC7C00B3D14A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		65B76FE32362EC7C00B3D14A /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		65B76FE52362EC7C00B3D14A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		65B76FE72362EC7C00B3D14A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		65B76FEA2362EC7C00B3D14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65B76FEC2362EC7E00B3D14A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65B76FEF2362EC7E00B3D14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65B76FF12362EC7E00B3D14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65B76FF62362EC7E00B3D14A /* FlyingPigletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlyingPigletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65B76FFA2362EC7E00B3D14A /* FlyingPigletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingPigletTests.swift; sourceTree = "<group>"; };
+		65B76FFC2362EC7E00B3D14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65B770012362EC7E00B3D14A /* FlyingPigletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlyingPigletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65B770052362EC7E00B3D14A /* FlyingPigletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingPigletUITests.swift; sourceTree = "<group>"; };
+		65B770072362EC7E00B3D14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F529013F2362E8670083F86A /* Frameworks */ = {
+		65B76FD92362EC7C00B3D14A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65B76FF32362EC7E00B3D14A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65B76FFE2362EC7E00B3D14A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,47 +80,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F52901392362E8670083F86A = {
+		65B76FD32362EC7B00B3D14A = {
 			isa = PBXGroup;
 			children = (
-				F52901442362E8670083F86A /* FlyingPiglet */,
-				F52901432362E8670083F86A /* Products */,
+				65B76FDE2362EC7C00B3D14A /* FlyingPiglet */,
+				65B76FF92362EC7E00B3D14A /* FlyingPigletTests */,
+				65B770042362EC7E00B3D14A /* FlyingPigletUITests */,
+				65B76FDD2362EC7C00B3D14A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F52901432362E8670083F86A /* Products */ = {
+		65B76FDD2362EC7C00B3D14A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F52901422362E8670083F86A /* FlyingPiglet.app */,
+				65B76FDC2362EC7C00B3D14A /* FlyingPiglet.app */,
+				65B76FF62362EC7E00B3D14A /* FlyingPigletTests.xctest */,
+				65B770012362EC7E00B3D14A /* FlyingPigletUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F52901442362E8670083F86A /* FlyingPiglet */ = {
+		65B76FDE2362EC7C00B3D14A /* FlyingPiglet */ = {
 			isa = PBXGroup;
 			children = (
-				F52901452362E8670083F86A /* AppDelegate.swift */,
-				F52901472362E8670083F86A /* SceneDelegate.swift */,
-				F52901492362E8670083F86A /* ViewController.swift */,
-				F529014B2362E8670083F86A /* Main.storyboard */,
-				F52901512362E86B0083F86A /* Assets.xcassets */,
-				F52901532362E86B0083F86A /* LaunchScreen.storyboard */,
-				F52901562362E86B0083F86A /* Info.plist */,
-				F529014E2362E8670083F86A /* FlyingPiglet.xcdatamodeld */,
+				65B76FDF2362EC7C00B3D14A /* AppDelegate.swift */,
+				65B76FE12362EC7C00B3D14A /* GameScene.sks */,
+				65B76FE32362EC7C00B3D14A /* Actions.sks */,
+				65B76FE52362EC7C00B3D14A /* GameScene.swift */,
+				65B76FE72362EC7C00B3D14A /* GameViewController.swift */,
+				65B76FE92362EC7C00B3D14A /* Main.storyboard */,
+				65B76FEC2362EC7E00B3D14A /* Assets.xcassets */,
+				65B76FEE2362EC7E00B3D14A /* LaunchScreen.storyboard */,
+				65B76FF12362EC7E00B3D14A /* Info.plist */,
 			);
 			path = FlyingPiglet;
+			sourceTree = "<group>";
+		};
+		65B76FF92362EC7E00B3D14A /* FlyingPigletTests */ = {
+			isa = PBXGroup;
+			children = (
+				65B76FFA2362EC7E00B3D14A /* FlyingPigletTests.swift */,
+				65B76FFC2362EC7E00B3D14A /* Info.plist */,
+			);
+			path = FlyingPigletTests;
+			sourceTree = "<group>";
+		};
+		65B770042362EC7E00B3D14A /* FlyingPigletUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65B770052362EC7E00B3D14A /* FlyingPigletUITests.swift */,
+				65B770072362EC7E00B3D14A /* Info.plist */,
+			);
+			path = FlyingPigletUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F52901412362E8670083F86A /* FlyingPiglet */ = {
+		65B76FDB2362EC7C00B3D14A /* FlyingPiglet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F52901592362E86B0083F86A /* Build configuration list for PBXNativeTarget "FlyingPiglet" */;
+			buildConfigurationList = 65B7700A2362EC7E00B3D14A /* Build configuration list for PBXNativeTarget "FlyingPiglet" */;
 			buildPhases = (
-				F529013E2362E8670083F86A /* Sources */,
-				F529013F2362E8670083F86A /* Frameworks */,
-				F52901402362E8670083F86A /* Resources */,
+				65B76FD82362EC7C00B3D14A /* Sources */,
+				65B76FD92362EC7C00B3D14A /* Frameworks */,
+				65B76FDA2362EC7C00B3D14A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -87,25 +151,69 @@
 			);
 			name = FlyingPiglet;
 			productName = FlyingPiglet;
-			productReference = F52901422362E8670083F86A /* FlyingPiglet.app */;
+			productReference = 65B76FDC2362EC7C00B3D14A /* FlyingPiglet.app */;
 			productType = "com.apple.product-type.application";
+		};
+		65B76FF52362EC7E00B3D14A /* FlyingPigletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65B7700D2362EC7E00B3D14A /* Build configuration list for PBXNativeTarget "FlyingPigletTests" */;
+			buildPhases = (
+				65B76FF22362EC7E00B3D14A /* Sources */,
+				65B76FF32362EC7E00B3D14A /* Frameworks */,
+				65B76FF42362EC7E00B3D14A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65B76FF82362EC7E00B3D14A /* PBXTargetDependency */,
+			);
+			name = FlyingPigletTests;
+			productName = FlyingPigletTests;
+			productReference = 65B76FF62362EC7E00B3D14A /* FlyingPigletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65B770002362EC7E00B3D14A /* FlyingPigletUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65B770102362EC7E00B3D14A /* Build configuration list for PBXNativeTarget "FlyingPigletUITests" */;
+			buildPhases = (
+				65B76FFD2362EC7E00B3D14A /* Sources */,
+				65B76FFE2362EC7E00B3D14A /* Frameworks */,
+				65B76FFF2362EC7E00B3D14A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65B770032362EC7E00B3D14A /* PBXTargetDependency */,
+			);
+			name = FlyingPigletUITests;
+			productName = FlyingPigletUITests;
+			productReference = 65B770012362EC7E00B3D14A /* FlyingPigletUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F529013A2362E8670083F86A /* Project object */ = {
+		65B76FD42362EC7B00B3D14A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1110;
-				ORGANIZATIONNAME = "Julie Dittmann Weimar Andersen";
+				ORGANIZATIONNAME = "Peter Obling";
 				TargetAttributes = {
-					F52901412362E8670083F86A = {
+					65B76FDB2362EC7C00B3D14A = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					65B76FF52362EC7E00B3D14A = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 65B76FDB2362EC7C00B3D14A;
+					};
+					65B770002362EC7E00B3D14A = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 65B76FDB2362EC7C00B3D14A;
 					};
 				};
 			};
-			buildConfigurationList = F529013D2362E8670083F86A /* Build configuration list for PBXProject "FlyingPiglet" */;
+			buildConfigurationList = 65B76FD72362EC7B00B3D14A /* Build configuration list for PBXProject "FlyingPiglet" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,56 +221,102 @@
 				en,
 				Base,
 			);
-			mainGroup = F52901392362E8670083F86A;
-			productRefGroup = F52901432362E8670083F86A /* Products */;
+			mainGroup = 65B76FD32362EC7B00B3D14A;
+			productRefGroup = 65B76FDD2362EC7C00B3D14A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F52901412362E8670083F86A /* FlyingPiglet */,
+				65B76FDB2362EC7C00B3D14A /* FlyingPiglet */,
+				65B76FF52362EC7E00B3D14A /* FlyingPigletTests */,
+				65B770002362EC7E00B3D14A /* FlyingPigletUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F52901402362E8670083F86A /* Resources */ = {
+		65B76FDA2362EC7C00B3D14A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F52901552362E86B0083F86A /* LaunchScreen.storyboard in Resources */,
-				F52901522362E86B0083F86A /* Assets.xcassets in Resources */,
-				F529014D2362E8670083F86A /* Main.storyboard in Resources */,
+				65B76FEB2362EC7C00B3D14A /* Main.storyboard in Resources */,
+				65B76FE22362EC7C00B3D14A /* GameScene.sks in Resources */,
+				65B76FED2362EC7E00B3D14A /* Assets.xcassets in Resources */,
+				65B76FF02362EC7E00B3D14A /* LaunchScreen.storyboard in Resources */,
+				65B76FE42362EC7C00B3D14A /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65B76FF42362EC7E00B3D14A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65B76FFF2362EC7E00B3D14A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F529013E2362E8670083F86A /* Sources */ = {
+		65B76FD82362EC7C00B3D14A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F529014A2362E8670083F86A /* ViewController.swift in Sources */,
-				F52901462362E8670083F86A /* AppDelegate.swift in Sources */,
-				F52901482362E8670083F86A /* SceneDelegate.swift in Sources */,
-				F52901502362E8670083F86A /* FlyingPiglet.xcdatamodeld in Sources */,
+				65B76FE62362EC7C00B3D14A /* GameScene.swift in Sources */,
+				65B76FE82362EC7C00B3D14A /* GameViewController.swift in Sources */,
+				65B76FE02362EC7C00B3D14A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65B76FF22362EC7E00B3D14A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65B76FFB2362EC7E00B3D14A /* FlyingPigletTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65B76FFD2362EC7E00B3D14A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65B770062362EC7E00B3D14A /* FlyingPigletUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		65B76FF82362EC7E00B3D14A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65B76FDB2362EC7C00B3D14A /* FlyingPiglet */;
+			targetProxy = 65B76FF72362EC7E00B3D14A /* PBXContainerItemProxy */;
+		};
+		65B770032362EC7E00B3D14A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65B76FDB2362EC7C00B3D14A /* FlyingPiglet */;
+			targetProxy = 65B770022362EC7E00B3D14A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		F529014B2362E8670083F86A /* Main.storyboard */ = {
+		65B76FE92362EC7C00B3D14A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F529014C2362E8670083F86A /* Base */,
+				65B76FEA2362EC7C00B3D14A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		F52901532362E86B0083F86A /* LaunchScreen.storyboard */ = {
+		65B76FEE2362EC7E00B3D14A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F52901542362E86B0083F86A /* Base */,
+				65B76FEF2362EC7E00B3D14A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -170,7 +324,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F52901572362E86B0083F86A /* Debug */ = {
+		65B770082362EC7E00B3D14A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -230,7 +384,7 @@
 			};
 			name = Debug;
 		};
-		F52901582362E86B0083F86A /* Release */ = {
+		65B770092362EC7E00B3D14A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,77 +438,160 @@
 			};
 			name = Release;
 		};
-		F529015A2362E86B0083F86A /* Debug */ = {
+		65B7700B2362EC7E00B3D14A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VBYP769GD7;
 				INFOPLIST_FILE = FlyingPiglet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.student.Julan17.FlyingPiglet;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.student.peobl17.FlyingPiglet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F529015B2362E86B0083F86A /* Release */ = {
+		65B7700C2362EC7E00B3D14A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VBYP769GD7;
 				INFOPLIST_FILE = FlyingPiglet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.student.Julan17.FlyingPiglet;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.student.peobl17.FlyingPiglet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
+		65B7700E2362EC7E00B3D14A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlyingPigletTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.student.peobl17.FlyingPigletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlyingPiglet.app/FlyingPiglet";
+			};
+			name = Debug;
+		};
+		65B7700F2362EC7E00B3D14A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlyingPigletTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.student.peobl17.FlyingPigletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlyingPiglet.app/FlyingPiglet";
+			};
+			name = Release;
+		};
+		65B770112362EC7E00B3D14A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlyingPigletUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.student.peobl17.FlyingPigletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlyingPiglet;
+			};
+			name = Debug;
+		};
+		65B770122362EC7E00B3D14A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlyingPigletUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.student.peobl17.FlyingPigletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlyingPiglet;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F529013D2362E8670083F86A /* Build configuration list for PBXProject "FlyingPiglet" */ = {
+		65B76FD72362EC7B00B3D14A /* Build configuration list for PBXProject "FlyingPiglet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F52901572362E86B0083F86A /* Debug */,
-				F52901582362E86B0083F86A /* Release */,
+				65B770082362EC7E00B3D14A /* Debug */,
+				65B770092362EC7E00B3D14A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F52901592362E86B0083F86A /* Build configuration list for PBXNativeTarget "FlyingPiglet" */ = {
+		65B7700A2362EC7E00B3D14A /* Build configuration list for PBXNativeTarget "FlyingPiglet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F529015A2362E86B0083F86A /* Debug */,
-				F529015B2362E86B0083F86A /* Release */,
+				65B7700B2362EC7E00B3D14A /* Debug */,
+				65B7700C2362EC7E00B3D14A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65B7700D2362EC7E00B3D14A /* Build configuration list for PBXNativeTarget "FlyingPigletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65B7700E2362EC7E00B3D14A /* Debug */,
+				65B7700F2362EC7E00B3D14A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65B770102362EC7E00B3D14A /* Build configuration list for PBXNativeTarget "FlyingPigletUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65B770112362EC7E00B3D14A /* Debug */,
+				65B770122362EC7E00B3D14A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F529014E2362E8670083F86A /* FlyingPiglet.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F529014F2362E8670083F86A /* FlyingPiglet.xcdatamodel */,
-			);
-			currentVersion = F529014F2362E8670083F86A /* FlyingPiglet.xcdatamodel */;
-			path = FlyingPiglet.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = F529013A2362E8670083F86A /* Project object */;
+	rootObject = 65B76FD42362EC7B00B3D14A /* Project object */;
 }
