@@ -17,6 +17,15 @@
 		65B76FF02362EC7E00B3D14A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B76FEE2362EC7E00B3D14A /* LaunchScreen.storyboard */; };
 		65B76FFB2362EC7E00B3D14A /* FlyingPigletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B76FFA2362EC7E00B3D14A /* FlyingPigletTests.swift */; };
 		65B770062362EC7E00B3D14A /* FlyingPigletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B770052362EC7E00B3D14A /* FlyingPigletUITests.swift */; };
+		65B770142362FDFC00B3D14A /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65B770132362FDFC00B3D14A /* MainMenu.sks */; };
+		65B770162363053E00B3D14A /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B770152363053E00B3D14A /* MSButtonNode.swift */; };
+		65B77018236310CD00B3D14A /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77017236310CD00B3D14A /* MainMenu.swift */; };
+		65F7AB4D2366D77D00EF2B21 /* helpScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65F7AB4C2366D77D00EF2B21 /* helpScene.sks */; };
+		65F7AB4F2366DC1500EF2B21 /* highScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65F7AB4E2366DC1500EF2B21 /* highScene.sks */; };
+		65F7AB512366E4D000EF2B21 /* highScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F7AB502366E4D000EF2B21 /* highScene.swift */; };
+		65F7AB532366E67800EF2B21 /* helpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F7AB522366E67800EF2B21 /* helpScene.swift */; };
+		65F7AB552366E9AF00EF2B21 /* settingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65F7AB542366E9AF00EF2B21 /* settingScene.sks */; };
+		65F7AB572366EA6100EF2B21 /* settingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F7AB562366EA6100EF2B21 /* settingScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,15 @@
 		65B770012362EC7E00B3D14A /* FlyingPigletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlyingPigletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B770052362EC7E00B3D14A /* FlyingPigletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingPigletUITests.swift; sourceTree = "<group>"; };
 		65B770072362EC7E00B3D14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65B770132362FDFC00B3D14A /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
+		65B770152363053E00B3D14A /* MSButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
+		65B77017236310CD00B3D14A /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		65F7AB4C2366D77D00EF2B21 /* helpScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = helpScene.sks; sourceTree = "<group>"; };
+		65F7AB4E2366DC1500EF2B21 /* highScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = highScene.sks; sourceTree = "<group>"; };
+		65F7AB502366E4D000EF2B21 /* highScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highScene.swift; sourceTree = "<group>"; };
+		65F7AB522366E67800EF2B21 /* helpScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpScene.swift; sourceTree = "<group>"; };
+		65F7AB542366E9AF00EF2B21 /* settingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = settingScene.sks; sourceTree = "<group>"; };
+		65F7AB562366EA6100EF2B21 /* settingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +126,15 @@
 				65B76FE32362EC7C00B3D14A /* Actions.sks */,
 				65B76FE52362EC7C00B3D14A /* GameScene.swift */,
 				65B76FE72362EC7C00B3D14A /* GameViewController.swift */,
+				65B770132362FDFC00B3D14A /* MainMenu.sks */,
+				65B77017236310CD00B3D14A /* MainMenu.swift */,
+				65F7AB522366E67800EF2B21 /* helpScene.swift */,
+				65F7AB542366E9AF00EF2B21 /* settingScene.sks */,
+				65F7AB562366EA6100EF2B21 /* settingScene.swift */,
+				65F7AB502366E4D000EF2B21 /* highScene.swift */,
+				65F7AB4E2366DC1500EF2B21 /* highScene.sks */,
+				65F7AB4C2366D77D00EF2B21 /* helpScene.sks */,
+				65B770152363053E00B3D14A /* MSButtonNode.swift */,
 				65B76FE92362EC7C00B3D14A /* Main.storyboard */,
 				65B76FEC2362EC7E00B3D14A /* Assets.xcassets */,
 				65B76FEE2362EC7E00B3D14A /* LaunchScreen.storyboard */,
@@ -239,6 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B76FEB2362EC7C00B3D14A /* Main.storyboard in Resources */,
+				65B770142362FDFC00B3D14A /* MainMenu.sks in Resources */,
+				65F7AB4F2366DC1500EF2B21 /* highScene.sks in Resources */,
+				65F7AB4D2366D77D00EF2B21 /* helpScene.sks in Resources */,
+				65F7AB552366E9AF00EF2B21 /* settingScene.sks in Resources */,
 				65B76FE22362EC7C00B3D14A /* GameScene.sks in Resources */,
 				65B76FED2362EC7E00B3D14A /* Assets.xcassets in Resources */,
 				65B76FF02362EC7E00B3D14A /* LaunchScreen.storyboard in Resources */,
@@ -267,9 +298,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F7AB512366E4D000EF2B21 /* highScene.swift in Sources */,
+				65F7AB572366EA6100EF2B21 /* settingScene.swift in Sources */,
+				65F7AB532366E67800EF2B21 /* helpScene.swift in Sources */,
+				65B77018236310CD00B3D14A /* MainMenu.swift in Sources */,
 				65B76FE62362EC7C00B3D14A /* GameScene.swift in Sources */,
 				65B76FE82362EC7C00B3D14A /* GameViewController.swift in Sources */,
 				65B76FE02362EC7C00B3D14A /* AppDelegate.swift in Sources */,
+				65B770162363053E00B3D14A /* MSButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4XD89W7Z43;
 				INFOPLIST_FILE = FlyingPiglet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,6 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4XD89W7Z43;
 				INFOPLIST_FILE = FlyingPiglet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

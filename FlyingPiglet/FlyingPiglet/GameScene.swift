@@ -11,6 +11,48 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    
+    /* UI Connections */
+        
+    var backButton4: MSButtonNode!
+
+        override func didMove(to view: SKView) {
+            /* Setup your scene here */
+            
+            /* Set UI connections */
+            backButton4 = self.childNode(withName: "backButton4") as? MSButtonNode
+
+            backButton4.selectedHandler = {
+                self.loadBack4()
+            }
+        }
+        
+        func loadBack4() {
+            /* 1) Grab reference to our SpriteKit view */
+            guard let skView = self.view as SKView? else {
+                print("Could not get Skview")
+                return
+            }
+
+            /* 2) Load Game scene */
+            guard let scene = SKScene(fileNamed:"MainMenu") else {
+                print("Could not make GameScene, check the name is spelled correctly")
+                return
+            }
+            
+            /* Show debug */
+                   skView.showsPhysics = true
+                   skView.showsDrawCount = true
+                   skView.showsFPS = true
+
+            /* 3) Start game scene */
+            skView.presentScene(scene)
+        }
+        
+    
+    
+    
+    
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
