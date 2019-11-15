@@ -15,6 +15,14 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
     super.viewDidLoad()
     // Load 'SceneSelection.sks' as a GKScene. This provides gameplay related content
+        let scene = GameScene(size: view.bounds.size)
+        let skView = view as! SKView
+        skView.showsFPS = false
+        skView.showsNodeCount = false
+        skView.ignoresSiblingOrder = false
+        scene.scaleMode = .resizeFill
+        skView.presentScene(scene)
+    /*
     // including entities and graphs.
     if let scene = GKScene(fileNamed: "MainMenu") {
         // Get the SKScene from the loaded SceneSelection
@@ -28,12 +36,13 @@ class GameViewController: UIViewController {
             // Present the scene
             if let view = self.view as! SKView? {
                 view.presentScene(sceneNode)
-                view.ignoresSiblingOrder = true
-                view.showsFPS = true
-                view.showsNodeCount = true
+                view.ignoresSiblingOrder = false
+                view.showsFPS = false
+                view.showsNodeCount = false
+ 
             }
         }
-    }
+    } */
     }
 
     override var shouldAutorotate: Bool {
@@ -46,6 +55,10 @@ class GameViewController: UIViewController {
         } else {
             return .all
         }
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Release any cached data, images, etc that aren't in use.
     }
 
     override var prefersStatusBarHidden: Bool {

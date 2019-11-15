@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A200DBA236C747600B60ADC /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A200DB9236C747500B60ADC /* GameElements.swift */; };
+		3A200DBE237DFC8500B60ADC /* player.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3A200DBD237DFC8500B60ADC /* player.atlas */; };
 		65B76FE02362EC7C00B3D14A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B76FDF2362EC7C00B3D14A /* AppDelegate.swift */; };
 		65B76FE22362EC7C00B3D14A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65B76FE12362EC7C00B3D14A /* GameScene.sks */; };
 		65B76FE42362EC7C00B3D14A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65B76FE32362EC7C00B3D14A /* Actions.sks */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A200DB9236C747500B60ADC /* GameElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
+		3A200DBD237DFC8500B60ADC /* player.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = player.atlas; path = ../../../../../Downloads/ProjectFiles/player.atlas; sourceTree = "<group>"; };
 		65B76FDC2362EC7C00B3D14A /* FlyingPiglet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyingPiglet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B76FDF2362EC7C00B3D14A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B76FE12362EC7C00B3D14A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				65B76FE12362EC7C00B3D14A /* GameScene.sks */,
 				65B76FE32362EC7C00B3D14A /* Actions.sks */,
 				65B76FE52362EC7C00B3D14A /* GameScene.swift */,
+				3A200DB9236C747500B60ADC /* GameElements.swift */,
 				65B76FE72362EC7C00B3D14A /* GameViewController.swift */,
 				65B770132362FDFC00B3D14A /* MainMenu.sks */,
 				65B77017236310CD00B3D14A /* MainMenu.swift */,
@@ -132,6 +137,7 @@
 				65F7AB542366E9AF00EF2B21 /* settingScene.sks */,
 				65F7AB562366EA6100EF2B21 /* settingScene.swift */,
 				65F7AB502366E4D000EF2B21 /* highScene.swift */,
+				3A200DBD237DFC8500B60ADC /* player.atlas */,
 				65F7AB4E2366DC1500EF2B21 /* highScene.sks */,
 				65F7AB4C2366D77D00EF2B21 /* helpScene.sks */,
 				65B770152363053E00B3D14A /* MSButtonNode.swift */,
@@ -267,6 +273,7 @@
 			files = (
 				65B76FEB2362EC7C00B3D14A /* Main.storyboard in Resources */,
 				65B770142362FDFC00B3D14A /* MainMenu.sks in Resources */,
+				3A200DBE237DFC8500B60ADC /* player.atlas in Resources */,
 				65F7AB4F2366DC1500EF2B21 /* highScene.sks in Resources */,
 				65F7AB4D2366D77D00EF2B21 /* helpScene.sks in Resources */,
 				65F7AB552366E9AF00EF2B21 /* settingScene.sks in Resources */,
@@ -298,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A200DBA236C747600B60ADC /* GameElements.swift in Sources */,
 				65F7AB512366E4D000EF2B21 /* highScene.swift in Sources */,
 				65F7AB572366EA6100EF2B21 /* settingScene.swift in Sources */,
 				65F7AB532366E67800EF2B21 /* helpScene.swift in Sources */,
@@ -481,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4XD89W7Z43;
 				INFOPLIST_FILE = FlyingPiglet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4XD89W7Z43;
 				INFOPLIST_FILE = FlyingPiglet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
