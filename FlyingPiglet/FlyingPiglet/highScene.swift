@@ -7,7 +7,7 @@
 //
 import SpriteKit
 
-class highScene: SKScene {
+class HighScene: SKScene {
 
 /* UI Connections */
     
