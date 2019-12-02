@@ -103,6 +103,10 @@ class highScene: SKScene {
             return
         }
         
+        //kode for at fjerne gameTableView fra SuperView,
+        //så highscore ikke bliver ved med at blive vist
+        gameTableView.removeFromSuperview()
+        
         /* 2) Load Game scene */
         guard let scene = SKScene(fileNamed:"MainMenu") else {
             print("Could not make GameScene, check the name is spelled correctly")
