@@ -39,9 +39,9 @@ var backButton2: MSButtonNode!
         }
         
         /* Show debug */
-               skView.showsPhysics = true
-               skView.showsDrawCount = true
-               skView.showsFPS = true
+               skView.showsPhysics = false
+               skView.showsDrawCount = false
+               skView.showsFPS = false
 
         /* 3) Start game scene */
         skView.presentScene(scene)

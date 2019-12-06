@@ -45,19 +45,6 @@ class GameRoomTableView: UITableView,UITableViewDelegate,UITableViewDataSource {
         cell.alpha = 0.5
         return cell
     }
-    
-    //for at lave section nr lige over row numbers og tal
-    /*  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-     return " \(section)"
-     }
-     */
-    
-    //funktionalitet hvis row bliver selected
-    /*
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     print("You selected cell #\(indexPath.row)!")
-     }
-     */
 }
 
 
@@ -114,9 +101,9 @@ class highScene: SKScene {
         }
         
         /* Show debug */
-        skView.showsPhysics = true
-        skView.showsDrawCount = true
-        skView.showsFPS = true
+        skView.showsPhysics = false
+        skView.showsDrawCount = false
+        skView.showsFPS = false
         
         /* 3) Start game scene */
         skView.presentScene(scene)

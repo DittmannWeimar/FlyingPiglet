@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 
 class MainMenu: SKScene {
 
@@ -27,6 +28,7 @@ var settingsButton: MSButtonNode!
 
         buttonPlay.selectedHandler = {
             self.loadGame()
+            
         }
         
         /* Set UI connections */
@@ -59,21 +61,19 @@ var settingsButton: MSButtonNode!
         }
 
         /* 2) Load Game scene */
-        let transition = SKTransition.doorway(withDuration: 1.5) //her lavet med animation af loading HUSK dette nede i start game scene
+        let transition = SKTransition.doorway(withDuration: 1.5)
+        //her lavet med animation af loading HUSK dette nede i start game scene
         guard let scene = GameScene(fileNamed:"GameScene") else {
             print("Could not make GameScene, check the name is spelled correctly")
             return
         }
-        
-        /* 3) Ensure correct aspect mode */
-        scene.scaleMode = .aspectFill
-
+   
         /* Show debug */
-        skView.showsPhysics = true
-        skView.showsDrawCount = true
-        skView.showsFPS = true
+        skView.showsPhysics = false
+        skView.showsDrawCount = false
+        skView.showsFPS = false
 
-        /* 4) Start game scene */
+        /* 3) Start game scene */
         skView.presentScene(scene, transition:transition)
     }
     
@@ -92,9 +92,10 @@ var settingsButton: MSButtonNode!
         }
         
         /* Show debug */
-        skView.showsPhysics = true
-        skView.showsDrawCount = true
-        skView.showsFPS = true
+        skView.showsPhysics = false
+        skView.showsDrawCount = false
+        skView.showsFPS = false
+        
 
         /* 4) Start game scene */
         skView.presentScene(scene)
@@ -115,9 +116,9 @@ var settingsButton: MSButtonNode!
         }
         
         /* Show debug */
-        skView.showsPhysics = true
-        skView.showsDrawCount = true
-        skView.showsFPS = true
+        skView.showsPhysics = false
+        skView.showsDrawCount = false
+        skView.showsFPS = false
 
         /* 4) Start game scene */
         skView.presentScene(scene)
@@ -137,9 +138,9 @@ var settingsButton: MSButtonNode!
         }
         
         /* Show debug */
-        skView.showsPhysics = true
-        skView.showsDrawCount = true
-        skView.showsFPS = true
+        skView.showsPhysics = false
+        skView.showsDrawCount = false
+        skView.showsFPS = false
 
         /* 4) Start game scene */
         skView.presentScene(scene)

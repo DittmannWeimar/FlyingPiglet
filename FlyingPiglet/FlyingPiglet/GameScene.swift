@@ -4,32 +4,36 @@
 //
 //  Created by Peter Obling on 25/10/2019.
 //  Copyright © 2019 Peter Obling. All rights reserved.
-//
+/* Hjælp til brug af AVFoundation er fundet fra https://stackoverflow.com/questions/43178289/ios-create-a-simple-audio-waveform-animation/43179340?fbclid=IwAR38FFalYofN0c5_8T0OIoWl55k_DD43qfj6m6pihtxPm6DR8NmiDMZ5Oas#43179340
+*/
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
-class GameScene: SKScene , SKPhysicsContactDelegate {
+class GameScene: SKScene , SKPhysicsContactDelegate, AVAudioRecorderDelegate , AVAudioPlayerDelegate {
     
+    
+    //timer score
+    var scoreLabel: SKLabelNode!
+    var highScoreLabel: SKLabelNode!
+    var counter = 0
+    var gameStateIsInGame = true
+    var score = 0
+    var highScore = 0
     var isGameStarted = Bool(false)
     var isDied = Bool(false)
-   // let coinSound = SKAction.playSoundFileNamed("CoinSound.mp3", waitForCompletion: false)
-    
- //   var score = Int(0)
-//    var scoreLbl = SKLabelNode()
-//    var highscoreLbl = SKLabelNode()
- //   var taptoplayLbl = SKLabelNode()
- //   var restartBtn = SKSpriteNode()
-//    var pauseBtn = SKSpriteNode()
-//    var logoImg = SKSpriteNode()
     var wallPair = SKNode()
     var moveAndRemove = SKAction()
+    var pigSprites = Array<Any>()
+    var pig = SKSpriteNode()
+    var repeatActionPig = SKAction()
+    //* opretter variabler til AVFoundation
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
+    var settings = [String : Int]()
     
-    //CREATE THE BIRD ATLAS FOR ANIMATION
-    let birdAtlas = SKTextureAtlas(named:"player")
-    var birdSprites = Array<Any>()
-    var bird = SKSpriteNode()
-    var repeatActionBird = SKAction()
+    
     
     /* UI Connections */
         
@@ -38,27 +42,47 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
 
         override func didMove(to view: SKView) {
             /* Setup your scene here */
+            //* Når man kommer til dette SKView oprettes createscene samt scorelabel og highscorelabel
+            
+            //timer score
+            scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+            scoreLabel.text = "Score: 0"
+            scoreLabel.position = CGPoint(x:self.frame.midX, y:self.frame.midY + 250)
+            scoreLabel.zPosition = 5
+            addChild(scoreLabel)
+            
+            //highscore
+            highScoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+            highScoreLabel.text = "Highscore: "
+            highScoreLabel.position = CGPoint(x:self.frame.midX, y:self.frame.midY + 300)
+            highScoreLabel.zPosition = 5
+            addChild(highScoreLabel)
+            
             createScene()
-            /* Set UI connections */
-   //         backButton4 = self.childNode(withName: "backButton4") as? MSButtonNode
-
-//            backButton4.selectedHandler = {
-  //              self.loadBack4()
-   //         }
+         
         }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isGameStarted == false{
+       //* når man rør skærmen første gang begynder microphonen at optage og spillet begynder
+            
+            startRecording()
+           
             //1
             isGameStarted =  true
-            bird.physicsBody?.affectedByGravity = true
+            pig.physicsBody?.affectedByGravity = true
+ 
+            //get highscore when touches began
+            let HighscoreDefault = UserDefaults.standard
+            
+            if (HighscoreDefault.value(forKey: "Highscore") != nil){
+                highScore = HighscoreDefault.value(forKey: "Highscore") as! NSInteger
+                highScoreLabel.text = NSString(format: "Highscore: %i", highScore) as String
+                //UserDefaults.standard.integer(forKey: "Key")
+            }
             
             //2
- //           logoImg.run(SKAction.scale(to: 0.5, duration: 0.3), completion: {
-   //             self.logoImg.removeFromParent()
-    //        })
-      //      taptoplayLbl.removeFromParent()
-            //3
-            self.bird.run(repeatActionBird)
+            self.pig.run(repeatActionPig)
             
             //1
             let spawn = SKAction.run({
@@ -77,17 +101,19 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
             let removePillars = SKAction.removeFromParent()
             moveAndRemove = SKAction.sequence([movePillars, removePillars])
             
-            bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-            bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
+            pig.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            pig.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
         } else {
             //4
             if isDied == false {
-                bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-                bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
+                //* koden under tilader at man kan bruge fingeren til at styre sine hop
+                pig.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                pig.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
             }
         }
        
             if isDied == true{
+                
                 
                 loadBack4()
             }
@@ -98,16 +124,53 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
             // Called before each frame is rendered
             if isGameStarted == true{
                 if isDied == false{
+                    
+                    //timer score
+                    //her får vi timeren til at gå opad
+                    //score højere end highscore = ny highscore
+                    if gameStateIsInGame {
+                        if counter >= 60 {
+                            score += 1
+                            counter = 0
+                        } else {
+                            counter += 1
+                            scoreLabel.text = NSString(format: "Score: %i", score) as String
+                        }
+                        if (score > highScore){
+                            highScore = score
+                            highScoreLabel.text = NSString(format: "Highscore: %i", highScore) as String
+                        }
+                        
+                        //storing highscore with userdefaults
+                        var HighscoreDefault = UserDefaults.standard
+                        UserDefaults.standard.set(highScore, forKey: "Highscore")
+                        UserDefaults.standard.synchronize()
+                    }
+                    
                     enumerateChildNodes(withName: "background", using: ({
                         (node, error) in
                         let bg = node as! SKSpriteNode
-                        bg.position = CGPoint(x: bg.position.x + 2, y: bg.position.y)
+                        bg.position = CGPoint(x: bg.position.x - 2, y: bg.position.y)
                         if bg.position.x <= -bg.size.width {
                             bg.position = CGPoint(x:bg.position.x + bg.size.width / 2,
                                                   y:bg.position.y)
                         }
                     }))
+                    
+                    // * Herunder bruger vi .updateMeters() og .everagePower(forChannel: 0) til at udtrække en værdi der er tilsvarende til hvor højt der bliver råbt ind i microfonen.
+                    audioRecorder.updateMeters()
+                    let power = audioRecorder.averagePower(forChannel: 0)
+                    print(power)
+                    
+              //* Hvis der bliver råbt højt nok vil grisen bevæge sig oppad.
+                   if power > -15 {
+                       pig.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                       pig.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 35))
+                    
+                   }
+                    
                 }
+              
             }
         }
     
@@ -126,22 +189,15 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         for i in 0..<2
         {
             let background = SKSpriteNode(imageNamed: "background1")
-            background.anchorPoint = CGPoint.init(x: 0, y: 0)
+          //  background.anchorPoint = CGPoint.init(x: 0, y: 0)
             background.position = CGPoint(x:CGFloat(i) * self.frame.width, y:0)
             background.name = "background"
             background.size = (self.view?.bounds.size)!
             self.addChild(background)
         }
-        //SET UP THE BIRD SPRITES FOR ANIMATION
-        birdSprites.append(birdAtlas.textureNamed("piglet"))
-        birdSprites.append(birdAtlas.textureNamed("piglet1"))
         
-        self.bird = createBird()
-        self.addChild(bird)
-        
-        //PREPARE TO ANIMATE THE BIRD AND REPEAT THE ANIMATION FOREVER
-        let animateBird = SKAction.animate(with: self.birdSprites as! [SKTexture], timePerFrame: 0.1)
-        self.repeatActionBird = SKAction.repeatForever(animateBird)
+        self.pig = createPig()
+        self.addChild(pig)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -156,9 +212,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
             }))
             if isDied == false{
                 isDied = true
-           //     createRestartBtn()
-           //     pauseBtn.removeFromParent()
-                self.bird.removeAllActions()
+                finishRecording(success: false)
+                self.pig.removeAllActions()
             }
         
     }
@@ -171,7 +226,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         self.removeAllActions()
         isDied = false
         isGameStarted = false
-        //   score = 0
         createScene()
         /* 1) Grab reference to our SpriteKit view */
         guard let skView = self.view as SKView? else {
@@ -186,12 +240,76 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         }
         
         /* Show debug */
-        skView.showsPhysics = true
-        skView.showsDrawCount = true
-        skView.showsFPS = true
+        skView.showsPhysics = false
+        skView.showsDrawCount = false
+        skView.showsFPS = false
         
         /* 3) Start game scene */
         skView.presentScene(scene)
     }
+    
+    func startRecording() {
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            
+            // Audio Settings
+            settings = [
+                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                AVSampleRateKey: 12000,
+                AVNumberOfChannelsKey: 1,
+                AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+            ]
+            
+            
+            audioRecorder = try AVAudioRecorder(url: self.directoryURL(), settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.prepareToRecord()
+            audioRecorder.isMeteringEnabled = true
+            
+            
+        } catch {
+            
+            finishRecording(success: false)
+        }
+        
+        do {
+            
+            try audioSession.setActive(true)
+            audioRecorder.record()
+            
+            
+        } catch {
+            
+        }
+    
+    }
+   // * Denne funktion stopper audiorecorderen når man dør i spillet
+    func finishRecording(success: Bool) {
+        
+        audioRecorder.stop()
+        audioRecorder = nil
+        
+        if success {
+            
+            print("Tap to Re-record")
+            
+            
+        } else {
+            
+            print("Somthing Wrong.")
+        }
+    }
+ //* denne funktion
+    func directoryURL() -> URL {
+        let fileManager = FileManager.default
+        let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = urls[0] as NSURL
+        let soundURL = documentDirectory.appendingPathComponent("sound.m4a")
+        print(soundURL!)
+        return soundURL!
+    }
+    
+    
     
 }

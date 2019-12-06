@@ -9,40 +9,66 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, AVAudioRecorderDelegate , AVAudioPlayerDelegate{
 
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
+    var audioPlayer:AVAudioPlayer!
+    
     override func viewDidLoad() {
     super.viewDidLoad()
     // Load 'SceneSelection.sks' as a GKScene. This provides gameplay related content
-        let scene = GameScene(size: view.bounds.size)
-        let skView = view as! SKView
-        skView.showsFPS = false
-        skView.showsNodeCount = false
-        skView.ignoresSiblingOrder = false
-        scene.scaleMode = .resizeFill
-        skView.presentScene(scene)
-    /*
-    // including entities and graphs.
-    if let scene = GKScene(fileNamed: "MainMenu") {
-        // Get the SKScene from the loaded SceneSelection
-        if let sceneNode = scene.rootNode as! MainMenu? {
-            // Copy gameplay related content over to the scene
-            //sceneNode.entities = scene.entities      KOMMENTERET UD DET GAV FEJL
-            //sceneNode.graphs = scene.graphs          KOMMENTERET UD DET GAV FEJL
-
-            // Set the scale mode to scale to fit the window
-            sceneNode.scaleMode = .aspectFill
-            // Present the scene
-            if let view = self.view as! SKView? {
-                view.presentScene(sceneNode)
-                view.ignoresSiblingOrder = false
-                view.showsFPS = false
-                view.showsNodeCount = false
- 
+       
+        
+        // spørger om tilladelse til at bruge microfonen 
+        
+        recordingSession = AVAudioSession.sharedInstance()
+        
+        do {
+            try recordingSession.setCategory(AVAudioSession.Category.playAndRecord)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        if let scene = GKScene(fileNamed: "MainMenu") {
+                            // Get the SKScene from the loaded SceneSelection
+                            if let sceneNode = scene.rootNode as! MainMenu? {
+                                // Set the scale mode to scale to fit the window
+                                sceneNode.scaleMode = .aspectFill
+                                // Present the scene
+                                if let view = self.view as! SKView? {
+                                    view.presentScene(sceneNode)
+                                    view.ignoresSiblingOrder = false
+                                    view.showsFPS = false
+                                    view.showsNodeCount = false
+                                    
+                                }
+                            }
+                        }
+                        
+                     //* Uncomment this code and comment out all other code in the if statment above to start the game when the app starts
+                      //  self.loadFirstScene()
+                        
+                    } else {
+                        
+                        self.failedFirstLoad()
+                     
+                        
+                    }
+                }
             }
+        } catch {
+            // failed to record!
         }
-    } */
+    }
+    
+  
+    
+    func failedFirstLoad() {
+    
+        return(); 
     }
 
     override var shouldAutorotate: Bool {
